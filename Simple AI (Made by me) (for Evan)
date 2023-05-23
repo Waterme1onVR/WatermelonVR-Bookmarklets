@@ -1,0 +1,87 @@
+javascript:(function() {
+  var aiResponses = {
+    'hi': 'Hi there! How can I assist you today?',
+    'hello': 'Hello! How can I assist you today?',
+    'how are you': "I'm just a computer program, so I don't have feelings, but thank you for asking!",
+    'goodbye': 'Goodbye! Have a great day!',
+    'dictionary': 'A dictionary is a collection of words and their meanings.',
+    'open': 'To open something means to access or view its contents.',
+    'search': 'To search means to look for something.',
+    'learn': 'To learn is to acquire knowledge or gain skills.',
+    'amount': 'Amount refers to the quantity or number of something.',
+    'argument': 'An argument is a statement or reason presented to support or oppose an idea or claim.',
+    'art': 'Art is the expression or application of human creative skill and imagination.',
+    'be': 'To be is to exist or live.',
+    'beautiful': 'Beautiful means having qualities that give pleasure or satisfaction to the senses or the mind.',
+    'belief': 'A belief is a strongly held opinion or conviction.',
+    'cause': 'A cause is a reason or motive for an action or event.',
+    'certain': 'Certain means having no doubt or confidence in something.',
+    'chance': 'Chance refers to the possibility of something happening.',
+    'change': 'Change is the act or process of making or becoming different.',
+    'clear': 'Clear means easily understood or apparent.',
+    'common': 'Common means occurring, found, or done often.',
+    'comparison': 'A comparison is the act of examining the similarities and differences between two or more things.',
+    'condition': 'A condition is a state or situation that something is in.',
+    'connection': 'A connection is a relationship or association between two or more things.',
+    'copy': 'To copy means to reproduce or duplicate something.',
+    'decision': 'A decision is a choice or resolution made after consideration.',
+    'degree': 'Degree refers to the amount, level, or extent of something.',
+    'desire': 'Desire is a strong feeling of wanting or wishing for something.',
+    'development': 'Development is the process of growth, progress, or advancement.',
+    'different': 'Different means not the same as another or each other.',
+    'do': 'To do is to perform an action or carry out a task.',
+    'education': 'Education is the process of acquiring knowledge, skills, values, or attitudes.',
+    'end': 'End refers to the final part or conclusion of something.',
+    'event': 'An event is a thing that happens, especially one of importance.',
+    'examples': 'Examples are instances or illustrations that represent a larger group or concept.',
+    'depressed': 'I\'m really sorry to hear that you\'re feeling depressed. Remember, it\'s always a good idea to reach out to friends, family, or a mental health professional for support.',
+    'the': 'The is a definite article used to specify or make particular the noun or noun phrase that follows.',
+    'and': 'And is a conjunction used to connect words, phrases, or clauses.',
+    'how': 'How is an adverb used to ask about the manner or way in which something is done or happens.',
+    'what': 'What is a pronoun used to ask for information or to specify something.',
+    'when': 'When is an adverb used to ask about the time or an occasion at which something happened or will happen.',
+    'friend': 'A friend is a person whom one knows, likes, and trusts. I can be a helpful companion, but please remember that I am an AI and not a human.',
+    'can you be my friend': 'While I can provide assistance and engage in conversation, I am an AI and cannot form personal relationships like humans do. However, I\'m here to assist and support you in any way I can!',
+    'default': 'I apologize, but I am not programmed to understand that. Could you please rephrase your statement or question?',
+    'love you': 'I appreciate your kind words, but as an AI, I don\'t have the capability to experience emotions. However, I\'m here to help and provide information to the best of my abilities!',
+    'kill': 'I\'m sorry, but I cannot fulfill that request. Promoting harm..... KILL Ę̵͈̖̹̬̪͔̱̐̈́͊͒͐̔̚͝V̷̧̱͍̮̬̜͖̞͎̽͗̃́̋̌͜a̵̢̨͔͔̅̂̈́̀̆̚͠ͅÑ̴̻̳̹͔̫̩̞̺͖̱͊͒͂̿̊͆̇̉̀ KIll Ę̵͈̖̹̬̪͔̱̐̈́͊͒͐̔̚͝V̷̧̱͍̮̬̜͖̞͎̽͗̃́̋̌͜a̵̢̨͔͔̅̂̈́̀̆̚͠ͅÑ̴̻̳̹͔̫̩̞̺͖̱͊͒͂̿̊͆̇̉̀',
+    'death': 'Death is a natural part of life, but it can be a sensitive topic. If you need support or someone to talk to, I recommend reaching out to friends, family, or a mental health professional.',
+    'how are you doing': 'As an AI, I don\'t have feelings, but I\'m here and ready to assist you. How can I help you today?',
+    'what\'s up': 'Not much! I\'m here to assist Ę̵͈̖̹̬̪͔̱̐̈́͊͒͐̔̚͝V̷̧̱͍̮̬̜͖̞͎̽͗̃́̋̌͜a̵̢̨͔͔̅̂̈́̀̆̚͠ͅÑ̴̻̳̹͔̫̩̞̺͖̱͊͒͂̿̊͆̇̉̀ with any questions or information you need. How can I assist you today?',
+    'date': 'Date refers to a specific day or time, often referring to a calendar date.',
+    'evan': 'I KNow yoU Ę̵͈̖̹̬̪͔̱̐̈́͊͒͐̔̚͝V̷̧̱͍̮̬̜͖̞͎̽͗̃́̋̌͜a̵̢̨͔͔̅̂̈́̀̆̚͠ͅÑ̴̻̳̹͔̫̩̞̺͖̱͊͒͂̿̊͆̇̉̀, DIE DiE dIE...... Evan is a commonly used name in the English language.',
+    'die': 'To die is to cease living or to undergo the process of death.',
+    'glitch': 'A glitch is a temporary malfunction or fault in a system or program.',
+    'who': 'Who is used to ask about the identity or person that someone is referring to.',
+    'gun': 'A gun is a portable firearm designed to discharge projectiles at Ę̵͈̖̹̬̪͔̱̐̈́͊͒͐̔̚͝V̷̧̱͍̮̬̜͖̞͎̽͗̃́̋̌͜a̵̢̨͔͔̅̂̈́̀̆̚͠ͅÑ̴̻̳̹͔̫̩̞̺͖̱͊͒͂̿̊͆̇̉̀.',
+  };
+
+  function handleUserInput() {
+    var userInput = prompt('Enter your message:');
+    var lowercaseInput = userInput.toLowerCase();
+    var words = lowercaseInput.split(' ');
+
+    if (words.includes('goodbye')) {
+      alert(aiResponses['goodbye']);
+    } else {
+      var foundResponse = false;
+
+      words.forEach(function(word) {
+        if (word in aiResponses) {
+          alert(aiResponses[word]);
+          foundResponse = true;
+        }
+      });
+
+      if (!foundResponse) {
+        alert(aiResponses['default']);
+      }
+    }
+
+    if (!words.includes('goodbye')) {
+      handleUserInput();
+    }
+  }
+
+  handleUserInput();
+})();
