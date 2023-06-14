@@ -1,1 +1,0 @@
-javascript:(function() {  var message = prompt("Enter a message:");  if (message) {    alert(message);  }})();
